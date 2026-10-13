@@ -1,0 +1,9 @@
+jsdocgen
+Copyright 2026 Derpinou
+
+This product is a TypeScript rewrite of discord.js-docgen
+(https://github.com/discordjs/docgen), Copyright 2015 - 2018 Amish Shah
+and Schuyler Cebulskie, licensed under the Apache License, Version 2.0.
+CHANGELOG.md lists how it differs from discord.js-docgen 0.9.0.
+
+The test project in test/fixtures/legacy comes from discord.js-docgen.

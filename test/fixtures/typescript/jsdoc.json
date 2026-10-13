@@ -1,0 +1,4 @@
+{
+	// Comments are allowed, like in JSDoc
+	"plugins": ["plugins/markdown"]
+}

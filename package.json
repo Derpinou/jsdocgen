@@ -1,0 +1,67 @@
+{
+	"name": "jsdocgen",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Generates discord.js-style docs.json files from the JSDoc comments of JavaScript and TypeScript projects. Maintained successor of discord.js-docgen.",
+	"keywords": [
+		"jsdoc",
+		"documentation",
+		"docs",
+		"generator",
+		"docgen",
+		"docs.json",
+		"discord.js",
+		"typescript"
+	],
+	"license": "Apache-2.0",
+	"author": "Derpinou (https://github.com/Derpinou)",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Derpinou/jsdocgen.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Derpinou/jsdocgen/issues"
+	},
+	"homepage": "https://github.com/Derpinou/jsdocgen#readme",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"bin": {
+		"docgen": "dist/cli.js",
+		"jsdocgen": "dist/cli.js"
+	},
+	"files": [
+		"dist",
+		"CHANGELOG.md",
+		"NOTICE"
+	],
+	"engines": {
+		"node": ">=22.13.0"
+	},
+	"scripts": {
+		"clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+		"compile": "npm run clean && tsc -p tsconfig.json",
+		"typecheck": "tsc -p tsconfig.json --noEmit && tsc -p test/tsconfig.json",
+		"pretest": "npm run compile",
+		"test": "node --test \"test/**/*.test.ts\""
+	},
+	"dependencies": {
+		"@babel/parser": "^7.29.9",
+		"amaro": "^1.2.1",
+		"jsdoc": "^4.0.5",
+		"jsdoc-parse": "^6.2.5",
+		"yaml": "^2.9.1"
+	},
+	"devDependencies": {
+		"@babel/types": "^7.29.8",
+		"@types/node": "^22.20.5",
+		"typescript": "^7.0.2"
+	}
+}

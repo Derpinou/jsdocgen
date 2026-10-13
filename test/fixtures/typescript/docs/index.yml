@@ -1,0 +1,9 @@
+- name: General
+  files:
+    - name: Welcome
+      id: welcome
+      path: ../../README.md
+- name: Guides
+  files:
+    - name: Getting started
+      path: getting-started.md
