@@ -1,0 +1,4 @@
+{
+	// Resolved from this directory, like JSDoc does
+	"plugins": ["./shout.cjs"]
+}

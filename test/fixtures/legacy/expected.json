@@ -1,0 +1,236 @@
+{
+	"meta": {
+		"generator": "VERSION",
+		"format": 20,
+		"date": 0
+	},
+	"custom": {
+		"general": {
+			"name": "General",
+			"files": {
+				"Cool": {
+					"name": "Cool guys are cool",
+					"type": "md",
+					"content": "# Cool\nCool stuff here.\n",
+					"path": "docs/general/Cool.md"
+				},
+				"Heya": {
+					"name": "Hey there",
+					"type": "md",
+					"content": "# Heya\nNothing to see here, sorry.\n",
+					"path": "docs/general/Heya.md"
+				}
+			}
+		},
+		"examples": {
+			"name": "Examples",
+			"files": {
+				"blah": {
+					"name": "Blah",
+					"type": "js",
+					"content": "console.log(42);\n",
+					"path": "docs/examples/blah.js"
+				}
+			}
+		}
+	},
+	"classes": [
+		{
+			"name": "ClassyClass",
+			"description": "A very classy class with lots of class",
+			"extends": [
+				[
+					[
+						"EventEmitter"
+					]
+				]
+			],
+			"construct": {
+				"name": "ClassyClass",
+				"description": "Constructs a thing."
+			},
+			"props": [
+				{
+					"name": "thing",
+					"description": "Just some thing",
+					"nullable": true,
+					"type": [
+						[
+							[
+								"number"
+							]
+						]
+					],
+					"meta": {
+						"line": 18,
+						"file": "SomeClass.js",
+						"path": "src"
+					}
+				}
+			],
+			"methods": [
+				{
+					"name": "doStuff",
+					"description": "Does stuff.",
+					"params": [
+						{
+							"name": "stuff",
+							"description": "Stuff to do",
+							"nullable": true,
+							"type": [
+								[
+									[
+										"string"
+									]
+								]
+							]
+						},
+						{
+							"name": "doer",
+							"description": "Callback to do the stuff",
+							"type": [
+								[
+									[
+										"StuffDoer"
+									]
+								]
+							]
+						}
+					],
+					"returns": {
+						"types": [
+							[
+								[
+									"number"
+								]
+							]
+						],
+						"description": "A thing",
+						"nullable": true
+					},
+					"meta": {
+						"line": 27,
+						"file": "SomeClass.js",
+						"path": "src"
+					}
+				},
+				{
+					"name": "hmm",
+					"description": "Who knows what this does.",
+					"emits": [
+						"ClassyClass#event:thingDone"
+					],
+					"meta": {
+						"line": 37,
+						"file": "SomeClass.js",
+						"path": "src"
+					}
+				}
+			],
+			"events": [
+				{
+					"name": "thingDone",
+					"description": "Emitted when a thing is done",
+					"params": [
+						{
+							"name": "thingy",
+							"description": "Thing",
+							"type": [
+								[
+									[
+										"SomeThing"
+									]
+								]
+							]
+						}
+					],
+					"meta": {
+						"line": 40,
+						"file": "SomeClass.js",
+						"path": "src"
+					}
+				}
+			],
+			"meta": {
+				"line": 7,
+				"file": "SomeClass.js",
+				"path": "src"
+			}
+		}
+	],
+	"interfaces": [],
+	"typedefs": [
+		{
+			"name": "SomeThing",
+			"description": "Just some thing",
+			"type": [
+				[
+					[
+						"Object"
+					]
+				]
+			],
+			"props": [
+				{
+					"name": "someNumber",
+					"description": "A really cool number",
+					"type": [
+						[
+							[
+								"number"
+							]
+						]
+					]
+				}
+			],
+			"meta": {
+				"line": 49,
+				"file": "SomeClass.js",
+				"path": "src"
+			}
+		},
+		{
+			"name": "StuffDoer",
+			"description": "Does some stuff with some other stuff.",
+			"type": [
+				[
+					[
+						"function"
+					]
+				]
+			],
+			"params": [
+				{
+					"name": "stuff",
+					"description": "Stuff to use to do stuff",
+					"nullable": true,
+					"type": [
+						[
+							[
+								"string"
+							]
+						]
+					]
+				}
+			],
+			"meta": {
+				"line": 55,
+				"file": "SomeClass.js",
+				"path": "src"
+			}
+		}
+	],
+	"externals": [
+		{
+			"name": "ClientOptions",
+			"see": [
+				"{@link http://hydrabolt.github.io/discord.js/#!/docs/tag/master/typedef/ClientOptions}"
+			],
+			"meta": {
+				"line": 61,
+				"file": "SomeClass.js",
+				"path": "src"
+			}
+		}
+	]
+}

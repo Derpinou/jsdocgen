@@ -1,0 +1,4 @@
+* text=auto eol=lf
+
+# Compiled output, committed so the package installs from GitHub without a build step
+dist/** linguist-generated=true

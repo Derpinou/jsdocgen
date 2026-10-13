@@ -1,0 +1,555 @@
+{
+	"meta": {
+		"generator": "VERSION",
+		"format": 20,
+		"date": 0
+	},
+	"custom": {
+		"general": {
+			"name": "General",
+			"files": {
+				"welcome": {
+					"name": "Welcome",
+					"type": "md",
+					"content": "# Example\n\nA TypeScript project documented with jsdocgen.\n",
+					"path": "README.md"
+				}
+			}
+		},
+		"guides": {
+			"name": "Guides",
+			"files": {
+				"getting-started": {
+					"name": "Getting started",
+					"type": "md",
+					"content": "# Getting started\n\n```js\nconst client = Client.create(token);\n```\n",
+					"path": "docs/guides/getting-started.md"
+				}
+			}
+		}
+	},
+	"classes": [
+		{
+			"name": "Client",
+			"description": "<p>A client</p>",
+			"extends": [
+				[
+					[
+						"BaseManager"
+					]
+				]
+			],
+			"construct": {
+				"name": "Client",
+				"params": [
+					{
+						"name": "options",
+						"description": "<p>The options of the client</p>",
+						"type": [
+							[
+								[
+									"ManagerOptions"
+								]
+							]
+						]
+					},
+					{
+						"name": "token",
+						"description": "<p>The token of the client</p>",
+						"type": [
+							[
+								[
+									"string"
+								]
+							]
+						]
+					},
+					{
+						"name": "mode",
+						"description": "<p>How the client connects</p>",
+						"optional": true,
+						"default": "'ws'",
+						"type": [
+							[
+								[
+									"ConnectionMode"
+								]
+							]
+						]
+					}
+				]
+			},
+			"props": [
+				{
+					"name": "createdAt",
+					"description": "<p>When the client was created</p>",
+					"type": [
+						[
+							[
+								"Date"
+							]
+						]
+					],
+					"meta": {
+						"line": 26,
+						"file": "Client.ts",
+						"path": "src"
+					}
+				},
+				{
+					"name": "options",
+					"description": "<p>The options of the manager</p>",
+					"readonly": true,
+					"type": [
+						[
+							[
+								"ManagerOptions"
+							]
+						]
+					],
+					"meta": {
+						"line": 36,
+						"file": "Manager.ts",
+						"path": "src"
+					}
+				},
+				{
+					"name": "name",
+					"description": "<p>The name of the manager</p>",
+					"type": [
+						[
+							[
+								"string"
+							]
+						]
+					],
+					"meta": {
+						"line": 42,
+						"file": "Manager.ts",
+						"path": "src"
+					}
+				}
+			],
+			"methods": [
+				{
+					"name": "fetch",
+					"description": "<p>Fetches a value</p>",
+					"emits": [
+						"Client#event:fetched"
+					],
+					"throws": [
+						[
+							[
+								"TypeError"
+							]
+						]
+					],
+					"params": [
+						{
+							"name": "id",
+							"description": "<p>The id of the value</p>",
+							"type": [
+								[
+									[
+										"string"
+									]
+								]
+							]
+						},
+						{
+							"name": "force",
+							"description": "<p>Whether to skip the cache</p>",
+							"optional": true,
+							"default": false,
+							"type": [
+								[
+									[
+										"boolean"
+									]
+								]
+							]
+						}
+					],
+					"async": true,
+					"returns": {
+						"types": [
+							[
+								[
+									"Promise",
+									"<?"
+								],
+								[
+									"string",
+									">"
+								]
+							]
+						],
+						"description": "<p>The value</p>"
+					},
+					"meta": {
+						"line": 48,
+						"file": "Client.ts",
+						"path": "src"
+					}
+				},
+				{
+					"name": "start",
+					"description": "<p>Starts the manager</p>",
+					"inherits": "BaseManager#start",
+					"inherited": true,
+					"abstract": false,
+					"returns": [
+						[
+							[
+								"Promise",
+								"<"
+							],
+							[
+								"void",
+								">"
+							]
+						]
+					],
+					"meta": {
+						"line": 57,
+						"file": "Manager.ts",
+						"path": "src"
+					}
+				},
+				{
+					"name": "stop",
+					"description": "<p>Stops the manager</p>",
+					"inherits": "BaseManager#stop",
+					"inherited": true,
+					"async": true,
+					"returns": {
+						"types": [
+							[
+								[
+									"Promise",
+									"<"
+								],
+								[
+									"boolean",
+									">"
+								]
+							]
+						],
+						"description": "<p>Whether the manager was running</p>"
+					},
+					"meta": {
+						"line": 63,
+						"file": "Manager.ts",
+						"path": "src"
+					}
+				},
+				{
+					"name": "create",
+					"description": "<p>Creates a client</p>",
+					"scope": "static",
+					"params": [
+						{
+							"name": "token",
+							"description": "<p>The token of the client</p>",
+							"type": [
+								[
+									[
+										"string"
+									]
+								]
+							]
+						}
+					],
+					"returns": [
+						[
+							[
+								"Client"
+							]
+						]
+					],
+					"meta": {
+						"line": 68,
+						"file": "Client.ts",
+						"path": "src"
+					}
+				}
+			],
+			"events": [
+				{
+					"name": "fetched",
+					"description": "<p>Emitted when a value is fetched</p>",
+					"params": [
+						{
+							"name": "id",
+							"description": "<p>The id of the value</p>",
+							"type": [
+								[
+									[
+										"string"
+									]
+								]
+							]
+						}
+					],
+					"meta": {
+						"line": 50,
+						"file": "Client.ts",
+						"path": "src"
+					}
+				}
+			],
+			"meta": {
+				"line": 21,
+				"file": "Client.ts",
+				"path": "src"
+			}
+		},
+		{
+			"name": "BaseManager",
+			"description": "<p>Base of the managers</p>",
+			"extends": [
+				[
+					[
+						"EventEmitter"
+					]
+				]
+			],
+			"abstract": true,
+			"construct": {
+				"name": "BaseManager",
+				"params": [
+					{
+						"name": "options",
+						"description": "<p>The options of the manager</p>",
+						"type": [
+							[
+								[
+									"ManagerOptions"
+								]
+							]
+						]
+					}
+				]
+			},
+			"props": [
+				{
+					"name": "options",
+					"description": "<p>The options of the manager</p>",
+					"readonly": true,
+					"type": [
+						[
+							[
+								"ManagerOptions"
+							]
+						]
+					],
+					"meta": {
+						"line": 36,
+						"file": "Manager.ts",
+						"path": "src"
+					}
+				},
+				{
+					"name": "name",
+					"description": "<p>The name of the manager</p>",
+					"type": [
+						[
+							[
+								"string"
+							]
+						]
+					],
+					"meta": {
+						"line": 42,
+						"file": "Manager.ts",
+						"path": "src"
+					}
+				}
+			],
+			"methods": [
+				{
+					"name": "start",
+					"description": "<p>Starts the manager</p>",
+					"abstract": true,
+					"returns": [
+						[
+							[
+								"Promise",
+								"<"
+							],
+							[
+								"void",
+								">"
+							]
+						]
+					],
+					"meta": {
+						"line": 57,
+						"file": "Manager.ts",
+						"path": "src"
+					}
+				},
+				{
+					"name": "stop",
+					"description": "<p>Stops the manager</p>",
+					"async": true,
+					"returns": {
+						"types": [
+							[
+								[
+									"Promise",
+									"<"
+								],
+								[
+									"boolean",
+									">"
+								]
+							]
+						],
+						"description": "<p>Whether the manager was running</p>"
+					},
+					"meta": {
+						"line": 63,
+						"file": "Manager.ts",
+						"path": "src"
+					}
+				}
+			],
+			"meta": {
+				"line": 30,
+				"file": "Manager.ts",
+				"path": "src"
+			}
+		},
+		{
+			"name": "Renderer",
+			"description": "<p>Renders the client</p>",
+			"methods": [
+				{
+					"name": "render",
+					"description": "<p>Renders a greeting</p>",
+					"params": [
+						{
+							"name": "name",
+							"description": "<p>Who to greet</p>",
+							"type": [
+								[
+									[
+										"string"
+									]
+								]
+							]
+						}
+					],
+					"returns": [
+						[
+							[
+								"Object"
+							]
+						]
+					],
+					"meta": {
+						"line": 13,
+						"file": "Renderer.tsx",
+						"path": "src"
+					}
+				}
+			],
+			"meta": {
+				"line": 6,
+				"file": "Renderer.tsx",
+				"path": "src"
+			}
+		}
+	],
+	"interfaces": [],
+	"typedefs": [
+		{
+			"name": "ConnectionMode",
+			"description": "<p>How the client connects</p>",
+			"type": [
+				[
+					[
+						"string"
+					]
+				]
+			],
+			"meta": {
+				"line": 3,
+				"file": "Client.ts",
+				"path": "src"
+			}
+		},
+		{
+			"name": "ManagerOptions",
+			"description": "<p>Options of a manager</p>",
+			"type": [
+				[
+					[
+						"Object"
+					]
+				]
+			],
+			"props": [
+				{
+					"name": "name",
+					"description": "<p>The name of the manager</p>",
+					"type": [
+						[
+							[
+								"string"
+							]
+						]
+					]
+				},
+				{
+					"name": "retries",
+					"description": "<p>How many times to retry</p>",
+					"optional": true,
+					"default": 3,
+					"type": [
+						[
+							[
+								"number"
+							]
+						]
+					]
+				}
+			],
+			"meta": {
+				"line": 8,
+				"file": "Manager.ts",
+				"path": "src"
+			}
+		},
+		{
+			"name": "Snowflake",
+			"description": "<p>A unique identifier</p>",
+			"type": [
+				[
+					[
+						"string"
+					]
+				]
+			],
+			"meta": {
+				"line": 1,
+				"file": "types.d.ts",
+				"path": "src"
+			}
+		}
+	],
+	"externals": [
+		{
+			"name": "EventEmitter",
+			"see": [
+				"{@link https://nodejs.org/api/events.html#class-eventemitter}"
+			],
+			"meta": {
+				"line": 3,
+				"file": "Manager.ts",
+				"path": "src"
+			}
+		}
+	]
+}
